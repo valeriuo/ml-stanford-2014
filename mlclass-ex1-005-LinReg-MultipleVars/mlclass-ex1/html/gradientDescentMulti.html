@@ -1,0 +1,136 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      --><title>gradientDescentMulti</title><meta name="generator" content="MATLAB 7.10"><meta name="date" content="2014-03-13"><meta name="m-file" content="gradientDescentMulti"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">function</span> [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters)
+<span class="comment">%GRADIENTDESCENTMULTI Performs gradient descent to learn theta</span>
+<span class="comment">%   theta = GRADIENTDESCENTMULTI(x, y, theta, alpha, num_iters) updates theta by</span>
+<span class="comment">%   taking num_iters gradient steps with learning rate alpha</span>
+
+<span class="comment">% Initialize some useful values</span>
+m = length(y); <span class="comment">% number of training examples</span>
+J_history = zeros(num_iters, 1);
+
+<span class="keyword">for</span> iter = 1:num_iters
+
+    <span class="comment">% ====================== YOUR CODE HERE ======================</span>
+    <span class="comment">% Instructions: Perform a single gradient step on the parameter vector</span>
+    <span class="comment">%               theta.</span>
+    <span class="comment">%</span>
+    <span class="comment">% Hint: While debugging, it can be useful to print out the values</span>
+    <span class="comment">%       of the cost function (computeCostMulti) and gradient here.</span>
+    <span class="comment">%</span>
+
+
+<span class="comment">%theta = theta - alpha/m*X'*(X*theta - y);</span>
+
+
+    <span class="comment">% ============================================================</span>
+
+    <span class="comment">% Save the cost J in every iteration</span>
+    J_history(iter) = computeCostMulti(X, y, theta);
+
+<span class="keyword">end</span>
+
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Input argument "y" is undefined.
+
+Error in ==&gt; gradientDescentMulti at 7
+m = length(y); % number of training examples
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.10<br></p></div><!--
+##### SOURCE BEGIN #####
+function [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters)
+%GRADIENTDESCENTMULTI Performs gradient descent to learn theta
+%   theta = GRADIENTDESCENTMULTI(x, y, theta, alpha, num_iters) updates theta by
+%   taking num_iters gradient steps with learning rate alpha
+
+% Initialize some useful values
+m = length(y); % number of training examples
+J_history = zeros(num_iters, 1);
+
+for iter = 1:num_iters
+
+    % ====================== YOUR CODE HERE ======================
+    % Instructions: Perform a single gradient step on the parameter vector
+    %               theta. 
+    %
+    % Hint: While debugging, it can be useful to print out the values
+    %       of the cost function (computeCostMulti) and gradient here.
+    %
+
+
+%theta = theta - alpha/m*X'*(X*theta - y);
+
+
+    % ============================================================
+
+    % Save the cost J in every iteration    
+    J_history(iter) = computeCostMulti(X, y, theta);
+
+end
+
+end
+
+##### SOURCE END #####
+--></body></html>
